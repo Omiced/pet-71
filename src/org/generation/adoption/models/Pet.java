@@ -57,6 +57,82 @@ public abstract class Pet {
         this.numPatas = numPatas;
     }
 
+    /**
+     * Getters y Setters
+     * Son metodos que permiten obtener la informacion de un atributo
+     * O fijar un valor a un atributo
+     *
+     * El getter retorna algo y no recibe parametros
+     * El setter recibe parametros pero no retorna nada
+     */
 
+    /**
+     * Retorna el valor del atributo name
+     * @return tipo String name
+     */
+    public String getName(){
+        return this.name;
+    }
 
+    /**
+     * Fija un nuevo valor al atributo name
+     * @param newName tipo String
+     */
+    public void setName(String newName){
+        this.name = newName;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public Integer getNumPatas() {
+        return numPatas;
+    }
+
+    public void setNumPatas(Integer numPatas) {
+        this.numPatas = numPatas;
+    }
+
+    /**
+     * Metodo abstracto
+     *
+     * Los metodos abstractos solo se pueden crear en clases abstractas o interfaces
+     * <p>
+     *      Son metodos que definen que se tiene que hacer, pero no como se hace
+     *      Esto quiere decir que nos brindan la firma del metodo sin el body
+     * </p>
+     * <p>
+     *     Las clases que hereden la clase abstracta se veran obligadas a
+     *     implementar y completar el metodo abstracto
+     * </p>
+     */
+    public abstract void makeSound();
+
+    /**
+     * Metodo abstracto
+     *
+     * Los metodos abstractos solo se pueden crear en clases abstractas o interfaces
+     * <p>
+     *      Son metodos que definen que se tiene que hacer, pero no como se hace
+     *      Esto quiere decir que nos brindan la firma del metodo sin el body
+     * </p>
+     * <p>
+     *     Las clases que hereden la clase abstracta se veran obligadas a
+     *     implementar y completar el metodo abstracto
+     * </p>
+     */
+    public abstract void showDetails();
 }
