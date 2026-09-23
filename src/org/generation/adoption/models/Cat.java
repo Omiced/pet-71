@@ -1,10 +1,12 @@
 package org.generation.adoption.models;
 
+import org.generation.adoption.interfaces.Adoptable;
+
 /**
  * La palabra reservada para heredar es Extends
  *
  */
-public class Cat extends Pet{
+public class Cat extends Pet implements Adoptable {
     private String breed;
 
     /**
@@ -54,5 +56,10 @@ public class Cat extends Pet{
          " años es de color " + this.getColor() + " tiene " + this.getNumPatas() + " patas  y es de raza "
          + this.getBreed()
         );
+    }
+
+    @Override
+    public void adopt() {
+        System.out.println("Felicidades " + this.getName() + "  fue adoptad@ 🎉🍾");
     }
 }//Cat
