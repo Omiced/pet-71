@@ -1,5 +1,7 @@
 package org.generation.adoption.models;
 
+import org.generation.adoption.exceptions.InvalidData;
+
 import java.util.Scanner;
 
 /**
@@ -50,9 +52,9 @@ public abstract class Pet {
      *     </li>
      * </ul>
      */
-    public Pet(String name, Integer age, String color, Integer numPatas){
-        this.name = name;
-        this.age =  age;
+    public Pet(String name, Integer age, String color, Integer numPatas) throws InvalidData{
+        setName(name);
+        setAge(age);
         this.color = color;
         this.numPatas = numPatas;
     }
@@ -78,7 +80,8 @@ public abstract class Pet {
      * Fija un nuevo valor al atributo name
      * @param newName tipo String
      */
-    public void setName(String newName){
+    public void setName(String newName) throws InvalidData {
+        if(newName == null || newName.trim().isEmpty()) throw  new InvalidData("El nombre no puede estar vacio o ser puros espacios");
         this.name = newName;
     }
 
@@ -86,7 +89,9 @@ public abstract class Pet {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(Integer age) throws InvalidData {
+        //aqui lanzar excepcion, verificar que la edad no este vacia y que sea mayor que 0
+        if(age == null || age <= 0) throw new InvalidData("La edad no puede estar vacia, ser 0 o menor");
         this.age = age;
     }
 

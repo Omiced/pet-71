@@ -1,3 +1,4 @@
+import org.generation.adoption.exceptions.InvalidData;
 import org.generation.adoption.interfaces.Adoptable;
 import org.generation.adoption.models.Cat;
 import org.generation.adoption.models.Pet;
@@ -19,11 +20,15 @@ public class Main {
          */
         //creando un arraylist de tipo pet
         ArrayList<Pet> mascotas = new ArrayList<>();
-        mascotas.add(new Cat("Nami", 1, "tricolor", 4, "carey"));
-        mascotas.add(new Cat("Alora", 1, "tricolor", 4, "calico"));
-        mascotas.add(new Cat("July", 5, "blanco con gris", 4, "americano de pelo corto"));
-        mascotas.add(new Turtle("Tugo", 10, "Cafe", 4, false));
-        mascotas.add(new Turtle("Kimbo", 15, "Verde", 4, true));
+        try {
+            mascotas.add(new Cat("Nami", 1, "tricolor", 4, "carey"));
+            mascotas.add(new Cat("Alora", 1, "tricolor", 4, "calico"));
+            mascotas.add(new Cat("", 5, "blanco con gris", 4, "americano de pelo corto"));
+            mascotas.add(new Turtle("Tugo", 10, "Cafe", 4, false));
+            mascotas.add(new Turtle("Kimbo", 15, "Verde", 4, true));
+        }catch (InvalidData e){
+            System.out.println("Problemas al crear la mascota " + e.getMessage());
+        }
         for (Pet mascota : mascotas){
             mascota.makeSound();
             mascota.showDetails();

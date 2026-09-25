@@ -1,5 +1,6 @@
 package org.generation.adoption.models;
 
+import org.generation.adoption.exceptions.InvalidData;
 import org.generation.adoption.interfaces.Adoptable;
 
 /**
@@ -21,7 +22,7 @@ public class Cat extends Pet implements Adoptable {
      * @param numPatas Atributo heredado tipo Integer
      * @param breed Atributo propio tipo String
      */
-    public Cat(String name, Integer age, String color, Integer numPatas, String breed){
+    public Cat(String name, Integer age, String color, Integer numPatas, String breed) throws InvalidData {
         super(name, age, color, numPatas);
         this.breed = breed;
     }//constructor
